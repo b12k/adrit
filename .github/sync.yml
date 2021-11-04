@@ -1,0 +1,15 @@
+group:
+  # Files and folders copied verbatim
+  - files:
+      - source: sync/global
+        dest: ./
+    repos: |
+      as24ch/test-repo
+  # Release flow
+  - files:
+      - source: sync/actions/release.yml
+        dest: .github/workflow/release.yml
+      - source: sync/configs/.release-it.json
+        dest: ./.release-it.json
+    repos: |
+      as24ch/test-repo

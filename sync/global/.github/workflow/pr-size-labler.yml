@@ -1,0 +1,21 @@
+name: Pull Request Size Labeler
+
+on: pull_request
+
+jobs:
+  label-pr-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: codelytv/pr-size-labeler@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          xs_max_size: 25
+          s_max_size: 50
+          m_max_size: 100
+          l_max_size: 200
+          fail_if_xl: true
+          message_if_xl: >
+            'This PR exceeds the recommended size of 400 lines.
+            Please make sure you are NOT addressing multiple issues with one PR.
+            Note this PR might be rejected due to its size.'
+          github_api_url: api.github.com

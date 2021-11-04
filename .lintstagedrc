@@ -1,0 +1,4 @@
+{
+  "**/*.md": "npm run _lint:markdown",
+  "**/*.ts": "npm run _lint:scripts"
+}
