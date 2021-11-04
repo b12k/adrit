@@ -1,0 +1,61 @@
+{
+  "name": "adrit",
+  "version": "1.0.0",
+  "description": "Thats how we do development",
+  "main": "index.js",
+  "scripts": {
+    "adr": "ts-node ./src/decider",
+    "create:toc": "ts-node ./src/create-toc.ts && git add README.md",
+    "prepare": "husky install",
+    "_lint:scripts": "eslint \"src/**/*.ts\"",
+    "_lint:markdown": "markdownlint-cli2 **/*.md #node_modules",
+    "_husky:commit-msg": "commitlint",
+    "_husky:pre-commit": "npm run create:toc && lint-staged",
+    "_husky:pre-push": "branch-name-lint .branchlint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/as24ch/.github.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/as24ch/.github/issues"
+  },
+  "homepage": "https://github.com/as24ch/.github#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.6.1",
+    "@types/nunjucks": "^3.1.5",
+    "@types/prompts": "^2.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "branch-name-lint": "^2.1.1",
+    "date-fns": "^2.23.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^13.0.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-tsc": "^2.0.0",
+    "eslint-plugin-unicorn": "^35.0.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "lodash": "^4.17.21",
+    "markdownlint-cli2": "^0.2.0",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.2.3",
+    "open-editor": "^3.0.0",
+    "prompt": "^1.1.0",
+    "prompts": "^2.4.1",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {}
+}

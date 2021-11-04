@@ -1,0 +1,10 @@
+{
+  "branchNameLinter": {
+    "prefixes": [
+      "docs",
+      "sync",
+      "misc"
+    ],
+    "disallowed": ["master"]
+  }
+}

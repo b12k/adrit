@@ -1,0 +1,21 @@
+name: SyncFiles
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  sync-files:
+    if: github.event_name == 'workflow_dispatch' || (startsWith(github.head_ref, 'sync/') && github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Repo File Sync Action
+        uses: BetaHuhn/repo-file-sync-action@v1.10.0
+        with:
+          GH_PAT: ${{ secrets.GH_TOKEN }}

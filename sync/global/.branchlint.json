@@ -1,0 +1,10 @@
+{
+  "branchNameLinter": {
+    "prefixes": [
+      "feat",
+      "fix",
+      "misc"
+    ],
+    "disallowed": ["master"]
+  }
+}

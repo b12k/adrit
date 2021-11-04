@@ -1,0 +1,13 @@
+name: Pull Request Revice Stats
+
+on: pull_request
+
+jobs:
+  pr-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: flowwer-dev/pull-request-stats@master
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          organization: ${{ secrets.ORG_NAME }}
+          charts: true
